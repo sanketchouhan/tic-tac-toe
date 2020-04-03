@@ -1,0 +1,152 @@
+<div class="game">
+
+    <!-- overlay div  *ngIf="overlay"-->
+    <div class="overlay" *ngIf="overlay">
+        <!-- winner overlay  *ngIf="winner"-->
+        <div class="winner" *ngIf="winner">
+            <div class="wins" *ngIf="winner==='x'">
+                <img src="../../assets/images/icons8-x-64.png" alt="" class="cell-img">
+                <h4>Wins!</h4>
+            </div>
+            <div class="wins" *ngIf="winner==='o'">
+                <img src="../../assets/images/icons8-o-64.png" alt="" class="cell-img">
+                <h4>Wins!</h4>
+            </div>
+            <div class="wins" *ngIf="winner==='d'">
+                <h4>Draw!</h4>
+            </div>
+
+            <div class="restart" (click)="restart()">
+                <img src="../../assets/images/restart-1.png" alt="" class="restart-img">
+                <p>Restart</p>
+            </div>
+        </div>
+        <!-- when back button is pressed -->
+        <div class="back-dialog" *ngIf="backBtn">
+            <p>Are you sure?</p>
+            <div class="buttons">
+                <div class="yes-btn" (click)="goToHome()">Yes</div>
+                <div class="no-btn" (click)="overlay=false;backBtn=false">No</div>
+            </div>
+        </div>
+        <!-- when friend left the game -->
+        <div class="show-friend-left" *ngIf="friendLeft">
+            <h1>Oops !!!</h1>
+            <h2>Your friend left the game.</h2>
+            <p>Taking you back to Home Page.</p>
+        </div>
+        <!-- when server error -->
+        <div class="show-server-error" *ngIf="serverError">
+            <h1>Oops !!!</h1>
+            <h2>Some error occured !</h2>
+            <p>Please try again later...</p>
+            <div class="home" (click)="goToHome()">
+                <img src="../../assets/images/home.png" alt="">
+                <p>Home</p>
+            </div>
+        </div>
+    </div>
+    <!-- overlay div ends -->
+
+    <div class="header">
+        <img src="../../assets/images/left-arrow.png" alt="" class="back" (click)="overlay=true;backBtn=true">
+        <!-- game -->
+        <img src="../../assets/images/tictactoe-logo.png" alt="" class="game-logo">
+    </div>
+    <div class="game-status">
+        <div class="user1 user">
+            <img src="../../assets/images/icons8-o-64.png" alt="" class="users-img" *ngIf="user==='o'">
+            <img src="../../assets/images/icons8-x-64.png" alt="" class="users-img" *ngIf="user==='x'">
+            <div class="content">
+                <h5>You</h5>
+                <h4>{{userWins}} wins</h4>
+            </div>
+        </div>
+        <div class="user2 user">
+            <img src="../../assets/images/icons8-o-64.png" alt="" class="users-img" *ngIf="friend==='o'">
+            <img src="../../assets/images/icons8-x-64.png" alt="" class="users-img" *ngIf="friend==='x'">
+            <div class="content" [ngClass]="{friendAnimation:!friendJoined}">
+                <h5>Friend</h5>
+                <h4>{{friendWins}} wins</h4>
+            </div>
+        </div>
+        <div class="draw user">
+            <img src="../../assets/images/equalizer.png" alt="" class="users-img">
+            <div class="content">
+                <h4>{{draws}} draws</h4>
+            </div>
+        </div>
+    </div>
+    <div class="remainingGames">
+        Games remaining : {{remainingGame}}
+    </div>
+    <div class="gamearea">
+        <div class="cell" (click)="cellClicked(0)">
+            <img src="../../assets/images/icons8-x-64.png" alt="" class="cell-img" *ngIf="gameArray[0]==='x'">
+            <img src="../../assets/images/icons8-o-64.png" alt="" class="cell-img" *ngIf="gameArray[0]==='o'">
+        </div>
+        <div class="cell" (click)="cellClicked(1)">
+            <img src="../../assets/images/icons8-x-64.png" alt="" class="cell-img" *ngIf="gameArray[1]==='x'">
+            <img src="../../assets/images/icons8-o-64.png" alt="" class="cell-img" *ngIf="gameArray[1]==='o'">
+        </div>
+        <div class="cell" (click)="cellClicked(2)">
+            <img src="../../assets/images/icons8-x-64.png" alt="" class="cell-img" *ngIf="gameArray[2]==='x'">
+            <img src="../../assets/images/icons8-o-64.png" alt="" class="cell-img" *ngIf="gameArray[2]==='o'">
+        </div>
+        <div class="cell" (click)="cellClicked(3)">
+            <img src="../../assets/images/icons8-x-64.png" alt="" class="cell-img" *ngIf="gameArray[3]==='x'">
+            <img src="../../assets/images/icons8-o-64.png" alt="" class="cell-img" *ngIf="gameArray[3]==='o'">
+        </div>
+        <div class="cell" (click)="cellClicked(4)">
+            <img src="../../assets/images/icons8-x-64.png" alt="" class="cell-img" *ngIf="gameArray[4]==='x'">
+            <img src="../../assets/images/icons8-o-64.png" alt="" class="cell-img" *ngIf="gameArray[4]==='o'">
+        </div>
+        <div class="cell" (click)="cellClicked(5)">
+            <img src="../../assets/images/icons8-x-64.png" alt="" class="cell-img" *ngIf="gameArray[5]==='x'">
+            <img src="../../assets/images/icons8-o-64.png" alt="" class="cell-img" *ngIf="gameArray[5]==='o'">
+        </div>
+        <div class="cell" (click)="cellClicked(6)">
+            <img src="../../assets/images/icons8-x-64.png" alt="" class="cell-img" *ngIf="gameArray[6]==='x'">
+            <img src="../../assets/images/icons8-o-64.png" alt="" class="cell-img" *ngIf="gameArray[6]==='o'">
+        </div>
+        <div class="cell" (click)="cellClicked(7)">
+            <img src="../../assets/images/icons8-x-64.png" alt="" class="cell-img" *ngIf="gameArray[7]==='x'">
+            <img src="../../assets/images/icons8-o-64.png" alt="" class="cell-img" *ngIf="gameArray[7]==='o'">
+        </div>
+        <div class="cell" (click)="cellClicked(8)">
+            <img src="../../assets/images/icons8-x-64.png" alt="" class="cell-img" *ngIf="gameArray[8]==='x'">
+            <img src="../../assets/images/icons8-o-64.png" alt="" class="cell-img" *ngIf="gameArray[8]==='o'">
+        </div>
+    </div>
+    <div class="footer">
+        <div class="box">
+            <div class="chance-user1" [ngClass]="{isActive:userTurn}">
+                <img src="../../assets/images/icons8-o-64.png" alt="" class="box-img" *ngIf="user==='o'">
+                <img src="../../assets/images/icons8-x-64.png" alt="" class="box-img" *ngIf="user==='x'"> You
+            </div>
+            <div class="chance-user2" [ngClass]="{isActive:friendTurn}">
+                <img src="../../assets/images/icons8-o-64.png" alt="" class="box-img" *ngIf="friend==='o'">
+                <img src="../../assets/images/icons8-x-64.png" alt="" class="box-img" *ngIf="friend==='x'"> Friend
+            </div>
+        </div>
+    </div>
+
+    <div class="message-box">
+        <div class="message" *ngFor="let m of messages">
+            <div class="msg-text">{{m}}</div>
+        </div>
+        <div class="input-box">
+            <input type="text" name="text" id="text" [(ngModel)]="textMsg" *ngIf="showInput">
+            <div class="msg-btn" *ngIf="showInput">
+                <img src="../../assets/images/play-button.png" alt="" (click)="sendMsg()">
+            </div>
+            <div class="msg-btn" *ngIf="!showInput">
+                <img src="../../assets/images/chat.png" alt="" (click)="showInput=!showInput">
+            </div>
+        </div>
+    </div>
+
+    <div class="friend-joined" *ngIf="friendJoined">
+        Friend joined !!!
+    </div>
+</div>

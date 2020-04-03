@@ -1,0 +1,37 @@
+.home{
+    height: 100vh;
+    width: 100%;
+    /* background-color: purple; */
+    background-image: linear-gradient(to top, #1b065e, #3a237b, #563f98, #735cb7, #907ad6);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+/* h3{
+    margin: .5rem 0 2rem 0;
+    color: white;
+    font-size: 2rem;
+} */
+.name{
+    width: 12rem;
+}
+.logo{
+    width: 10rem;
+}
+.box{
+    margin-top: 4rem;
+}
+.send-btn{
+    padding: .5rem 3rem;
+    display: flex;
+    align-items: center;
+    background-color: seashell;
+    border-radius: 30px;
+    box-shadow: 0 0 20px #2e2e2e;
+    cursor: pointer;
+}
+.btn-img{
+    height: 2rem;
+    margin-left: 2rem;
+}
