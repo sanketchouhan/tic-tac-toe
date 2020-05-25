@@ -4,12 +4,19 @@ module.exports = function (io) {
     io.on('connection', (socket) => {
 
         socket.on("joinRoom", (gameRoom) => {
-            socket.join(gameRoom.room);
+
+            // socket.join(gameRoom.room);
             var room = io.sockets.adapter.rooms[gameRoom.room];
-            if (room.length == 1) {
-                io.in(gameRoom.room).emit('userJoined', { userJoined : true});
+            if (room) {
+                if (room.length < 2) {
+                    socket.join(gameRoom.room);
+                    io.in(gameRoom.room).emit('friendJoined', { friendJoined: true });
+                } else {
+                    socket.emit('roomFull', { roomFull: true });
+                }
             } else {
-                io.in(gameRoom.room).emit('friendJoined', { friendJoined : true});
+                socket.join(gameRoom.room);
+                io.in(gameRoom.room).emit('userJoined', { userJoined: true });
             }
         });
 
@@ -26,7 +33,7 @@ module.exports = function (io) {
         });
 
         socket.on('leavingRoom', (room) => {
-            io.in(room.room).emit('friendLeft', { friendLeft : true});
+            io.in(room.room).emit('friendLeft', { friendLeft: true });
         });
     });
 }

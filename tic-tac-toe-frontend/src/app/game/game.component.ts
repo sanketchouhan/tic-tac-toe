@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as io from 'socket.io-client';
 
@@ -7,7 +7,7 @@ import * as io from 'socket.io-client';
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.css']
 })
-export class GameComponent implements OnInit {
+export class GameComponent implements OnInit,AfterViewInit {
 
   messages: Array<string> = [];
   gameArray: Array<string> = ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'];
@@ -24,15 +24,15 @@ export class GameComponent implements OnInit {
   friendWins: number = 0;
   draws: number = 0;
 
-  winner: string = null;
-  overlay: boolean = false;
-  backBtn: boolean = false;
-  friendLeft: boolean = false;
+  winner: string = null;//
+  backBtn: boolean = false;//
+  friendLeft: boolean = false;//
   serverError: boolean = false;
+  // isRestart: boolean= false;
 
   showInput: boolean = false;
   textMsg: string = "";
-  friendJoined: boolean = false;
+  friendJoined: boolean = false;//
 
   socket: any;
 
@@ -55,7 +55,6 @@ export class GameComponent implements OnInit {
       this.socket.emit("joinRoom", { room: this.gameRoom });
     });
     this.socket.on('connect_error', () => {
-      this.overlay = true;
       this.serverError = true;
     });
 
@@ -101,7 +100,6 @@ export class GameComponent implements OnInit {
 
     this.socket.on('friendLeft', (data) => {
       if (data.friendLeft) {
-        this.overlay = true;
         this.friendLeft = true;
         setTimeout(() => {
           this.router.navigate(['/']);
@@ -111,6 +109,11 @@ export class GameComponent implements OnInit {
       }
     });
 
+  }
+
+  @ViewChild('msgInputBox',{static: false}) trgtElFocus: ElementRef;
+  ngAfterViewInit(){
+    
   }
 
   cellClicked(cell) {
@@ -163,17 +166,14 @@ export class GameComponent implements OnInit {
   checkRemainingGames() {
     if (this.remainingGame <= 0) {
       if (this.userWins > this.friendWins) {
-        this.overlay = true;
         this.winner = this.user;
         return true;
       }
       if (this.userWins < this.friendWins) {
-        this.overlay = true;
         this.winner = this.friend;
         return true;
       }
       if (this.userWins == this.friendWins) {
-        this.overlay = true;
         this.winner = 'd';
         return true;
       }
@@ -214,6 +214,7 @@ export class GameComponent implements OnInit {
 
   sendMsg() {
     this.showInput = !this.showInput;
+
     if(this.textMsg.trim().length > 0){
       this.socket.emit('textMsg', {
         room: this.gameRoom,
@@ -221,6 +222,13 @@ export class GameComponent implements OnInit {
       });
     }
     this.textMsg = "";
+  }
+
+
+  
+  openInputfield(){
+    this.showInput=!this.showInput;
+    this.trgtElFocus.nativeElement.focus();
   }
 
   goToHome() {
@@ -234,10 +242,10 @@ export class GameComponent implements OnInit {
     this.remainingGame = 5;
     this.gameArray = ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'];
     this.winner = null;
-    this.overlay = false;
     this.userWins = 0;
     this.friendWins = 0;
     this.draws = 0;
+    
   }
 
 }

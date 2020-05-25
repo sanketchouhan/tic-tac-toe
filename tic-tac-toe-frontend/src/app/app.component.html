@@ -1,1 +1,8 @@
-<router-outlet></router-outlet>
+<!-- <h1>home</h1>
+<h4 [routerLink]="['/game']">game</h4> -->
+<!-- <router-outlet></router-outlet> -->
+
+<div [@routeAnimations]="o && o.activatedRouteData 
+      && o.activatedRouteData['animation']">
+    <router-outlet #o="outlet"></router-outlet>
+</div>

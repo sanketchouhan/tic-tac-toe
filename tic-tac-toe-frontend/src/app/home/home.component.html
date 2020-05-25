@@ -4,6 +4,16 @@
     <img src="../../assets/images/logo-transparentBg.png" alt="" class="logo">
 
     <div class="box">
-        <div class="send-btn" (click)="sendRequest()">Play with friend <img src="../../assets/images/whatsapp.png" alt="" class="btn-img"></div>
+        <div class="create-room" (click)="createRoom()" *ngIf="url==''">Create Room</div>
+
+        <div class="play-link-box" *ngIf="url!=''">
+            <div class="play-link" id="play-link">{{url}}</div>
+            <div class="copy" (click)="copyToClipboard()">
+                <img src="../../assets/images/copy.png" alt="" class="copy-img">
+                <div class="tooltip" *ngIf="isCopied">Copied!</div>
+            </div>
+        </div>
+        <div class="send-btn" (click)="sendRequest()" *ngIf="url!=''"><span>Play with friend</span> <img src="../../assets/images/whatsapp.png" alt="" class="btn-img"></div>
+        <div class="start-btn" (click)="startGame()" *ngIf="url!=''"><span>Start game</span> <img src="../../assets/images/start.png" alt="" class="btn-img"></div>
     </div>
 </div>

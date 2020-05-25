@@ -1,5 +1,5 @@
 {
-  "name": "tic-tac-toe-frontend",
+  "name": "tic-tac-toe",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -18,8 +18,10 @@
     "@angular/forms": "~8.2.14",
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
+    "@angular/pwa": "^0.901.1",
     "@angular/router": "~8.2.14",
-    "@babel/compat-data": "^7.8.0",
+    "@angular/service-worker": "~8.2.14",
+    "ngx-clipboard": "^12.3.0",
     "rxjs": "~6.4.0",
     "socket.io-client": "^2.3.0",
     "tslib": "^1.10.0",

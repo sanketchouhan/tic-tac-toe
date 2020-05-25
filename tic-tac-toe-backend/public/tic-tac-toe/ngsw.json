@@ -1,0 +1,118 @@
+{
+  "configVersion": 1,
+  "timestamp": 1590416214732,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/5-es2015.5c6426e38b14930f9e16.js",
+        "/5-es5.5c6426e38b14930f9e16.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main-es2015.6f2fc07b8f4ca6b14078.js",
+        "/main-es5.6f2fc07b8f4ca6b14078.js",
+        "/manifest.webmanifest",
+        "/polyfills-es2015.5b10b8fd823b6392f1fd.js",
+        "/polyfills-es5.8e50a9832860f7cf804a.js",
+        "/runtime-es2015.5a31a2db86f0c78b10ef.js",
+        "/runtime-es5.5a31a2db86f0c78b10ef.js",
+        "/styles.6ab59c625498105f4c7f.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/icons/favicon.ico",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/images/chat.png",
+        "/assets/images/copy.png",
+        "/assets/images/equalizer.png",
+        "/assets/images/home.png",
+        "/assets/images/icons8-o-64.png",
+        "/assets/images/icons8-x-64.png",
+        "/assets/images/left-arrow.png",
+        "/assets/images/logo-transparentBg.png",
+        "/assets/images/logo.png",
+        "/assets/images/play-button.png",
+        "/assets/images/restart-1.png",
+        "/assets/images/sad-logo.png",
+        "/assets/images/start.png",
+        "/assets/images/tictactoe-logo.png",
+        "/assets/images/wait-logo.png",
+        "/assets/images/whatsapp.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/5-es2015.5c6426e38b14930f9e16.js": "1702d1cb02d06971e6448083f92d1defe042f33d",
+    "/5-es5.5c6426e38b14930f9e16.js": "26d0bf1e96382560ff0d1bbb6fff5d50d0d89ee5",
+    "/assets/icons/favicon.ico": "56f00efbf711acf4e76e9301375eb17bec36466e",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/images/chat.png": "4bec46ae6cf6e2b7c3dbed1f4238fbcf592d0260",
+    "/assets/images/copy.png": "3196d47c702126691fd457ec8bf74e7db7161f56",
+    "/assets/images/equalizer.png": "65e51f6df3dbe0c6ed84bca835277b98e8dfa419",
+    "/assets/images/home.png": "3ec260cf1f2cfb8b8328f73bd9a5e90c049d44a4",
+    "/assets/images/icons8-o-64.png": "f2cdf9c27f9479d299568a54cca5d6d7ddddaf89",
+    "/assets/images/icons8-x-64.png": "fd39cfc62b7d434e66008a00f88ed3aa9f070332",
+    "/assets/images/left-arrow.png": "db8870b4c1b383515a08fcffd15278ee1c9489f6",
+    "/assets/images/logo-transparentBg.png": "a33ed9f0cc4cb88e0bf2bc256ee3b50099705861",
+    "/assets/images/logo.png": "e0b53c2b58215d4083f5f013d410a6ae55b68e63",
+    "/assets/images/play-button.png": "2160427af204c98362c7baa6e08cc64e50db070f",
+    "/assets/images/restart-1.png": "5b712dbb63e56b88b0656a5108d6b073420747a7",
+    "/assets/images/sad-logo.png": "39f765d843de973502a33378d17178873e2e0156",
+    "/assets/images/start.png": "05e9588b06fac2e8ce0f42fe482062e8406a9941",
+    "/assets/images/tictactoe-logo.png": "fc51e7fc7a06ff1ebe283be56fab9111dbdefd86",
+    "/assets/images/wait-logo.png": "b1d027303f88ff395ca17722c8ab9fb780462864",
+    "/assets/images/whatsapp.png": "34fb9634be7e1adff6d9eba644b2d0cfd316793d",
+    "/favicon.ico": "56f00efbf711acf4e76e9301375eb17bec36466e",
+    "/index.html": "9effa54c14ea3b9b807fa1de9afde46bab669e3a",
+    "/main-es2015.6f2fc07b8f4ca6b14078.js": "826d21d6a2297955fde1e1f3f1ba560d1c73d5d9",
+    "/main-es5.6f2fc07b8f4ca6b14078.js": "833ead73fd74ba1991225cf23f92447765a45d40",
+    "/manifest.webmanifest": "31856af0477f86abdb8f64546ae4dcada5eee645",
+    "/polyfills-es2015.5b10b8fd823b6392f1fd.js": "9abfe15f17820a646e3d51c420908d9f8f7b69b8",
+    "/polyfills-es5.8e50a9832860f7cf804a.js": "a09a6044f37c73c715665663d2dcb61f666618a1",
+    "/runtime-es2015.5a31a2db86f0c78b10ef.js": "bf2617841561395efceb1baaab054d1d9b30138c",
+    "/runtime-es5.5a31a2db86f0c78b10ef.js": "fc21518a27c8be6eec7c96c15d9109b6eedee596",
+    "/styles.6ab59c625498105f4c7f.css": "2f356db4f5bc85acdd315dbf97e2d39a9445b1d0"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

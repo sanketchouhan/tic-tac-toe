@@ -1,9 +1,15 @@
 <div class="game">
 
-    <!-- overlay div  *ngIf="overlay"-->
-    <div class="overlay" *ngIf="overlay">
-        <!-- winner overlay  *ngIf="winner"-->
-        <div class="winner" *ngIf="winner">
+    <div class="overlay-awaiting-friend-join" *ngIf="!friendJoined && !serverError">
+        <div class="content">
+            <h1>Waiting for friend <br> to join...</h1>
+            <div class="wait-logo-div">
+                <img src="../../assets/images/wait-logo.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="overlay-winner" *ngIf="winner">
+        <div class="content">
             <div class="wins" *ngIf="winner==='x'">
                 <img src="../../assets/images/icons8-x-64.png" alt="" class="cell-img">
                 <h4>Wins!</h4>
@@ -13,6 +19,7 @@
                 <h4>Wins!</h4>
             </div>
             <div class="wins" *ngIf="winner==='d'">
+                <img src="../../assets/images/start.png" alt="" class="draw-img">
                 <h4>Draw!</h4>
             </div>
 
@@ -21,22 +28,29 @@
                 <p>Restart</p>
             </div>
         </div>
-        <!-- when back button is pressed -->
-        <div class="back-dialog" *ngIf="backBtn">
-            <p>Are you sure?</p>
+    </div>
+
+    <div class="overlay-back-dialog" *ngIf="backBtn">
+        <div class="content">
+            <h3>Are you sure?</h3>
             <div class="buttons">
                 <div class="yes-btn" (click)="goToHome()">Yes</div>
-                <div class="no-btn" (click)="overlay=false;backBtn=false">No</div>
+                <div class="no-btn" (click)="backBtn=false">No</div>
             </div>
         </div>
-        <!-- when friend left the game -->
-        <div class="show-friend-left" *ngIf="friendLeft">
+    </div>
+
+    <div class="overlay-show-friend-left" *ngIf="friendLeft">
+        <div class="content">
             <h1>Oops !!!</h1>
-            <h2>Your friend left the game.</h2>
+            <h2>Your friend left <br> the game</h2>
+            <img src="../../assets/images/sad-logo.png" alt="">
             <p>Taking you back to Home Page.</p>
         </div>
-        <!-- when server error -->
-        <div class="show-server-error" *ngIf="serverError">
+    </div>
+
+    <div class="overlay-show-server-error" *ngIf="serverError">
+        <div class="content">
             <h1>Oops !!!</h1>
             <h2>Some error occured !</h2>
             <p>Please try again later...</p>
@@ -46,10 +60,9 @@
             </div>
         </div>
     </div>
-    <!-- overlay div ends -->
 
     <div class="header">
-        <img src="../../assets/images/left-arrow.png" alt="" class="back" (click)="overlay=true;backBtn=true">
+        <img src="../../assets/images/left-arrow.png" alt="" class="back" (click)="backBtn=true">
         <!-- game -->
         <img src="../../assets/images/tictactoe-logo.png" alt="" class="game-logo">
     </div>
@@ -65,7 +78,7 @@
         <div class="user2 user">
             <img src="../../assets/images/icons8-o-64.png" alt="" class="users-img" *ngIf="friend==='o'">
             <img src="../../assets/images/icons8-x-64.png" alt="" class="users-img" *ngIf="friend==='x'">
-            <div class="content" [ngClass]="{friendAnimation:!friendJoined}">
+            <div class="content">
                 <h5>Friend</h5>
                 <h4>{{friendWins}} wins</h4>
             </div>
@@ -136,17 +149,14 @@
             <div class="msg-text">{{m}}</div>
         </div>
         <div class="input-box">
-            <input type="text" name="text" id="text" [(ngModel)]="textMsg" *ngIf="showInput">
+            <input type="text" #msgInputBox name="text" id="text" autocomplete="off" [(ngModel)]="textMsg"
+                *ngIf="showInput">
             <div class="msg-btn" *ngIf="showInput">
                 <img src="../../assets/images/play-button.png" alt="" (click)="sendMsg()">
             </div>
             <div class="msg-btn" *ngIf="!showInput">
-                <img src="../../assets/images/chat.png" alt="" (click)="showInput=!showInput">
+                <img src="../../assets/images/chat.png" alt="" (click)="openInputfield()">
             </div>
         </div>
-    </div>
-
-    <div class="friend-joined" *ngIf="friendJoined">
-        Friend joined !!!
     </div>
 </div>
