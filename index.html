@@ -5,33 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
-
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato|Titan+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
-    <div class="header">
+    <div class="header" id="home">
         <div class="container">
+            <div class="nav">
+                <img src="images/logo.png" alt="" class="logo">
+                <div class="nav-btns">
+                    <button class="header-btn">
+                        <a href="http://gamestictactoe.herokuapp.com" target="_blank">Play Game</a>
+                    </button>
+                    <button class="header-btn">
+                        <a href="https://github.com/sanketchouhan/tic-tac-toe" target="_blank">View Code</a>
+                    </button>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-6">
-                    <img src="images/logo.png" alt="" class="logo">
                     <img src="images/mockup-6.png" alt="" class="header-img-2">
                     <img src="images/mockup-2.png" alt="" class="header-img-1">
                     <h1>Tic Tac Toe</h1>
                     <h3>Perfect Game To Play</h3>
                     <div class="btns">
-                        <div class="btn-div"><a href="">Play Game</a></div>
-                        <div class="btn-div"><a href="">View Code</a></div>
+                        <button class="header-btn"><a href="http://gamestictactoe.herokuapp.com" target="_blank">Play
+                                Game</a></button>
+                        <button class="header-btn"><a href="https://github.com/sanketchouhan/tic-tac-toe"
+                                target="_blank">View Code</a></button>
                     </div>
-                    <a href="#guide" class="play">How To Play</a>
+                    <p><a href="#guide" class="play">How To Play</a></p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="feature-banner">
+    <div class="feature-banner" id="feature-banner">
         <div class="container">
             <div class="row">
                 <div class="col-6 col-sm-3">
@@ -54,11 +66,12 @@
         </div>
     </div>
 
-    <div class="play-games-banner">
+    <div class="play-games-banner" id="play-games-banner">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
                     <h1>PLAY GAMES<br>MAKE FRIENDS</h1>
+                    <p>The game is designed to be played <br>on any mobile or desktop devices.</p>
                 </div>
                 <div class="col-sm-6">
                     <div class="img-banner">
@@ -74,56 +87,117 @@
         </div>
     </div>
 
-    <div class="playing-device-banner">
+    <div class="playing-device-banner" id="about">
+        <div class="bg-circle"></div>
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <img src="images/mockup-1.png" alt="" class="img-fluid">
+                    <img src="images/banner-img-1.png" alt="" class="img-fluid">
                 </div>
                 <div class="col-sm-6">
-                    <h1>Can Play On Any Device!!!</h1>
+                    <h1>Join friends and <br>start playing</h1>
+                    <ul>
+                        <li>Create a room and invite friends.</li>
+                        <li>Copy the invite link and send it to friend.</li>
+                        <li>Use <span>Play With Friend</span> option to send invite link using Whatsapp messenger.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="technologies-used-banner">
+    <div class="technologies-used-banner" id="tech-used">
+        <div class="bg-circle-2"></div>
         <div class="container">
             <h2>Technologies Used</h2>
             <div class="row">
-                <div class="col-sm-4 col-md-6">
+                <div class="col-md-6">
                     <div class="content">
-                        <h5>Technologies</h5>
+                        <img src="images/angular-logo.png" alt="" class="img-fluid">
+                        <div class="desc">
+                            <div class="name">
+                                Angular
+                            </div>
+                            <div class="use-case">
+                                Angular is an application design framework and development platform for creating
+                                efficient and sophisticated single-page apps.
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-sm-8 col-md-6">
-                    <div class="row">
-                        <div class="col-4">
-                            <img src="images/angular-logo.png" alt="" class="img-fluid">
+                <div class="col-md-6">
+                    <div class="content">
+                        <img src="images/nodejs.png" alt="" class="img-fluid">
+                        <div class="desc">
+                            <div class="name">
+                                NodeJS
+                            </div>
+                            <div class="use-case">
+                                As an asynchronous event-driven JavaScript runtime, Node.js is designed to build
+                                scalable network applications.
+                            </div>
                         </div>
-                        <div class="col-4">
-                            <img src="images/nodejs.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="content">
+                        <img src="images/socketio.png" alt="" class="img-fluid">
+                        <div class="desc">
+                            <div class="name">
+                                SocketIO
+                            </div>
+                            <div class="use-case">
+                                Socket.IO enables real-time, bidirectional and event-based communication.
+                                It works on every platform, browser or device, focusing equally on reliability and
+                                speed.
+                            </div>
                         </div>
-                        <div class="col-4">
-                            <img src="images/mongodb.jfif" alt="" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="content">
+                        <img src="images/html5.png" alt="" class="img-fluid">
+                        <div class="desc">
+                            <div class="name">
+                                HTML5
+                            </div>
+                            <div class="use-case">
+                                Hypertext Markup Language (HTML) is the standard markup language for documents designed
+                                to be displayed in a web browser.
+                            </div>
                         </div>
-                        <div class="col-4">
-                            <img src="images/html5.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="content">
+                        <img src="images/js.png" alt="" class="img-fluid">
+                        <div class="desc">
+                            <div class="name">
+                                JavaScript
+                            </div>
+                            <div class="use-case">
+                                JavaScript is a programming language that conforms to the
+                                ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and
+                                multi-paradigm.
+                            </div>
                         </div>
-                        <div class="col-4">
-                            <img src="images/css3.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="col-4">
-                            <img src="images/js.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="col-4">
-                            <img src="images/express.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="col-4">
-                            <img src="images/socketio.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="col-4">
-                            <img src="images/typescript.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="content">
+                        <img src="images/heroku.png" alt="" class="img-fluid">
+                        <div class="desc">
+                            <div class="name">
+                                Heroku
+                            </div>
+                            <div class="use-case">
+                                Heroku is a container-based cloud Platform as a Service (PaaS). Developers use Heroku to
+                                deploy, manage, and scale modern apps.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -133,41 +207,82 @@
 
     <div class="play-with-friend-banner">
         <div class="container">
-            <h2>Realtime playing experience !!!</h2>
+            <h2>Realtime playing <br>experience !!!</h2>
         </div>
     </div>
     </div>
 
     <div class="guide-banner" id="guide">
         <div class="container">
-            <h2>How To Play</h2>
+            <h1>How To Play</h1>
             <div class="row">
-                <div class="col-sm-6">
-
+                <div class="col-sm-6 col-md-4">
+                    <img src="images/how-to-play-img-1.png" alt="" class="img-fluid">
+                    <h3>Open <a href="http://gamestictactoe.herokuapp.com" target="_blank"><b>Tic Tac Toe</b></a> on any device
+                        browser</h3>
                 </div>
-                <div class="col-sm-6">
-
+                <div class="col-sm-6 col-md-4">
+                    <img src="images/how-to-play-img-2.png" alt="" class="img-fluid">
+                    <h3>Create room and share link with friend and start the game (on any device)</h3>
                 </div>
-                <div class="col-sm-6">
-
+                <div class="col-sm-6 col-md-4">
+                    <img src="images/how-to-play-img-3.png" alt="" class="img-fluid">
+                    <h3>Or click <b>Play with friend</b> to share link directly via Whatsapp (only on mobile devices)
+                    </h3>
                 </div>
-                <div class="col-sm-6">
-
+                <div class="col-sm-6 col-md-4">
+                    <img src="images/how-to-play-img-4.png" alt="" class="img-fluid">
+                    <h3>Wait for friend to join the room</h3>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <img src="images/how-to-play-img-5.png" alt="" class="img-fluid">
+                    <h3>Friend joined!!! Let the game begin</h3>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <img src="images/how-to-play-img-6.png" alt="" class="img-fluid">
+                    <h3>Hurray!!! Celebrate your wins</h3>
                 </div>
             </div>
+            <p>* For testing, copy game link in new browser/incognito window as second user and start the game.</p>
         </div>
     </div>
 
     <div class="footer">
         <div class="container">
-            <img src="images/logo.png" alt="" class="footer-logo">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Tic Tac Toe</h1>
+                    <p>
+                        <a href="http://gamestictactoe.herokuapp.com" target="_blank">Play Game</a>
+                    </p>
+                    <p>
+                        <a href="https://github.com/sanketchouhan/tic-tac-toe" target="_blank">View Code</a>
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#tech-used">Technology</a></li>
+                        <li><a href="#guide">How to play</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
+    </div>
+    <hr>
+    <div class="footer-end">
+        &copy; Sanket Chouhan - sanketchouhan555@gmail.com
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
+    <script src="javascript/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="javascript/noframework.waypoints.min.js"></script>
+    <script src="javascript/main.js"></script>
 
 </body>
 

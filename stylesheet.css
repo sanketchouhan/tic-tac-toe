@@ -19,64 +19,92 @@ body{
 
 .header{
     width: 100%;
-    height: 110vh;
+    min-height: 110vh;
     background-image: linear-gradient(to right bottom, #82d6ff, #8fbaff, #b8a3ff, #e585fc);
     clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+    overflow: hidden;
+}
+.header .container{
+    position: relative;
+}
+.header .nav{
+    position: absolute;
+    width: calc(100% - 30px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .header .logo{
     height: 4rem;
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
 }
+
 .header .container .col-sm-6{
     position: relative;
-    height: 100vh;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
     color: white;
 }
-.header .container .col-sm-6 h1{
+.header .col-sm-6 h1{
     font-size: 4rem;
     font-family: 'Titan One', cursive;
+    transform: translateY(5rem);
+    opacity: 0;
 }
-.header .container .col-sm-6 h3{
+.header .col-sm-6 h3{
     font-family: 'Titan One', cursive;
+    transform: translateY(5rem);
+    opacity: 0;
 }
-.header .container .col-sm-6 .btns{
+.header .col-sm-6 .btns{
     margin: 2rem 0;
     display: flex;
+    transform: translateY(5rem);
+    opacity: 0;
 }
-.header .container .col-sm-6 .btns a{
-    padding: .5rem 1.5rem;
-    margin-right: 1rem;
-    color: white;
-    text-decoration: none;
+.header .header-btn{
+    padding: .5rem 0;
+    background: transparent;
     border-radius: 5px;
     border: 1px solid #907ad6;
+    /* overflow: hidden; */
 }
-.header .container .col-sm-6 .btns a:hover{
-    background-color: #907ad6;
-    box-shadow: 0 0 10px #907ad6;
+.header .header-btn:nth-child(1){
+    margin-right: 1rem;
 }
-.header .container .col-sm-6 .play{
+.header .btns a, .nav-btns a{
+    padding: .8rem 2rem;
     color: white;
     text-decoration: none;
 }
-.header .container .col-sm-6 .play:hover{
+.header .header-btn:hover{
+    background-color: #907ad6;
+}
+.header .col-sm-6 .play{
+    color: white;
+    text-decoration: none;
+    transform: translateY(5rem);
+    opacity: 0;
+}
+.header .col-sm-6 .play:hover{
     color: #907ad6;
 }
-.header .container .col-sm-6 .header-img-1{
+.header .col-sm-6 .header-img-1{
     position: absolute;
     left: 110%;
     height: 60%;
+    transform: translateX(5rem);
+    opacity: 0;
 }
-.header .container .col-sm-6 .header-img-2{
+.header .col-sm-6 .header-img-2{
     position: absolute;
     left: 110%;
     height: 50%;
-    transform: translateX(90%);
+    transform: translateX(170%);
+    opacity: 0;
 }
 
 .feature-banner{
@@ -84,30 +112,49 @@ body{
 }
 .feature-banner .col-6{
     text-align: center;
+    padding: 1rem;
+    transform: translateY(5rem);
+    opacity: 0;
 }
 .feature-banner .col-6 img{
     height: 5rem;
 }
+.feature-banner p{
+    color: #907ad6;
+}
 
 
 .play-games-banner{
-    padding: 5rem 0;
+    padding: 5rem 0 8rem 0;
     overflow: hidden;
     background-color: azure;
 }
+.play-games-banner .col-sm-6:nth-child(1){
+    z-index: 10;
+}
 .play-games-banner .col-sm-6{
-    /* min-height: 50vh; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     position: relative;
+}
+.play-games-banner .col-sm-6 h1{
+    font-size: 3rem;
+    color: #907ad6;
+    font-family: 'Titan One', cursive;
+    margin-bottom: 1.5rem;
+    transform: translateY(5rem);
+    opacity: 0;
+}
+.play-games-banner .col-sm-6 p{
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    line-height: 1.5rem;
+    transform: translateY(5rem);
+    opacity: 0;
 }
 .play-games-banner .col-sm-6 .img-banner{
     position: absolute;
     min-height: 100%;
     width: 100%;
-    transform: rotate(30deg);
+    transform: rotate(35deg);
 }
 .play-games-banner .col-sm-6 .img-banner img{
     height: 20rem;
@@ -135,62 +182,261 @@ body{
 
 .playing-device-banner{
     padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+.playing-device-banner .bg-circle{
+    position: absolute;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 40rem;
+    width: 40rem;
+    border-radius: 50%;
+    background-color: #8fbaff;
+    opacity: .7;
+    z-index: -1;
 }
 .playing-device-banner .col-sm-6{
-    /* min-height: 50vh; */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
+.playing-device-banner .col-sm-6:nth-child(2){
+    align-items: flex-start;
+}
+.playing-device-banner h1{
+    font-size: 3rem;
+    color: #8fbaff;
+    font-family: 'Titan One', cursive;
+    margin-bottom: 1rem;
+    transform: translateY(5rem);
+    opacity: 0;
+}
+.playing-device-banner li{
+    padding: .5rem;
+    list-style: none;
+    transform: translateY(5rem);
+    opacity: 0;
+}
+.playing-device-banner li span{
+    color: #8fbaff;
+    font-weight: bold;
+}
+
 .playing-device-banner .col-sm-6 img{
-    /* height: 100%; */
+    transform: translateX(-10rem);
+    opacity: 0;
 }
 
 
 .technologies-used-banner{
     padding: 5rem 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.technologies-used-banner .bg-circle-2{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateX(40%);
+    height: 40rem;
+    width: 40rem;
+    border-radius: 50%;
+    background-color: gold;
+    opacity: .7;
+    z-index: -1;
 }
 .technologies-used-banner h2{
     margin-bottom: 3rem ;
+    font-size: 3rem;
+    color: gold;
+    font-family: 'Titan One', cursive;
+    transform: translateY(5rem);
+    opacity: 0;
+}
+/* .technologies-used-banner .row:nth-child(1) .col-md-6{
+
+} */
+.technologies-used-banner .col-md-6{
+    padding: 1rem;
+    min-height: 100%;
+    transform: translateY(5rem);
+    opacity: 0;
 }
 .technologies-used-banner .content{
-    /* padding: 1rem; */
+    display: flex;
+    height: 100%;
     border-radius: 10px;
-    /* box-shadow: 0 0 10px rgb(197, 197, 197); */
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, .3);
 }
-.technologies-used-banner .col-sm-8 .col-4{
-    padding: 1.5rem;
+.technologies-used-banner .content img{
+    width: 4rem;
+    height: 4rem;
+}
+.technologies-used-banner .content .desc{
+    padding-left: 1rem;
+    text-align: left;
+}
+.technologies-used-banner .content .name{
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+/* .technologies-used-banner .col-sm-8 .col-4{
+    padding: 1rem;
     border-radius: 10px;
 }
-.technologies-used-banner .col-sm-8 .col-4:hover{
+.technologies-used-banner .col-sm-8 .col-4 .content{
+    padding: 1rem;
+    text-align: center;
+}
+.technologies-used-banner .col-sm-8 .col-4 .content .name{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.technologies-used-banner .col-sm-8 .col-4 .content:hover{
     box-shadow: 0 0 10px rgb(197, 197, 197);
 }
 .technologies-used-banner .col-sm-8 .col-4 img{
     width: 100%;
-}
+} */
 
 .play-with-friend-banner{
     padding: 10rem 0;
-    background: url("images/smartmockups_k8dfwejg.jpg") center center;
+    background: url("images/banner-bg.jpg") center center;
     background-size: cover;
     background-attachment: fixed;
-    color: white;
     clip-path: polygon(0 20%, 100% 0, 100% 80%, 0% 100%);
+}
+.play-with-friend-banner h2{
+    font-size: 3rem;
+    color: #fff;
+    font-family: 'Titan One', cursive;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, .8);
 }
 
 .guide-banner{
     padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
 }
+.guide-banner::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    /* clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%); */
+    clip-path: polygon(0 20%, 100% 40%, 100% 80%, 0 60%);
+    /* clip-path: polygon(30% 0, 100% 50%, 30% 100%, 0% 100%, 80% 52%, 0% 0%); */
 
+    background-color: #e585fc;
+    opacity: .3;
+}
+.guide-banner h1{
+    font-size: 3rem;
+    color: #907ad6;
+    font-family: 'Titan One', cursive;
+    text-align: center;
+    margin-bottom: 1rem;
+    transform: translateY(5rem);
+    opacity: 0;
+}
+.guide-banner .col-sm-6{
+    text-align: center;
+    padding: 1rem;
+    transform: translateY(5rem);
+    opacity: 0;
+}
+.guide-banner img{
+    height: 100%;
+    max-height: 15rem;
+    margin-bottom: 1rem;
+}
+.guide-banner h3{
+    font-size: 1.1rem;
+    color: #907ad6;
+    /* font-family: 'Titan One', cursive; */
+    text-align: center;
+}
+.guide-banner h3 a{
+    color: #907ad6;
+    text-decoration: none;
+}
+.guide-banner h3 a:hover{
+    color: #8fbaff;
+    text-decoration: none;
+}
+.guide-banner p{
+    color: red;
+    text-align: right;
+    font-size: .9rem;
+}
 
 .footer{
-    padding: 3rem 0 5rem 0;
-    background-image: linear-gradient(to right bottom, #82d6ff, #8fbaff, #b8a3ff, #e585fc);
+    padding: 5rem 0;
+    /* background-image: linear-gradient(to right bottom, #82d6ff, #8fbaff, #b8a3ff, #e585fc); */
+    background-color: #8fbaff;
 }
-.footer .footer-logo{
-    height: 3rem;
+.footer .col-sm-6{
+    padding-bottom: 2rem;
+}
+.footer h1{
+    font-size: 2.5rem;
+    color: #fff;
+    font-family: 'Titan One', cursive;
+}
+.footer p{
+    margin: 1.5rem 0 0 0;
+}
+.footer a{
+    color: #fff;
+    text-decoration: none;
+}
+.footer a:hover{
+    color: #907ad6;
+}
+.footer ul{
+    margin-top: 1rem;
+}
+.footer li{
+    list-style: none;
+    padding-bottom: 1rem;
+}
+/* .footer li a{
+    color: #fff;
+    text-decoration: none;
+} */
+/* .footer li a:hover{
+    color: #907ad6;
+} */
+/* .footer .game-btn{
+    padding: .5rem 0;
+    margin-bottom: 1rem;
+    background: transparent;
+    border-radius: 5px;
+    border: 1px solid #907ad6;
+}
+.footer .game-btn a{
+    padding: .8rem 2rem;
+    color: white;
+    text-decoration: none;
+}
+.footer .game-btn:hover{
+    background-color: #907ad6;
+} */
+hr{
+    margin: 0;
+}
+.footer-end{
+    padding: .2rem;
+    font-size: .8rem;
+    text-align: center;
+    color: white;
+    background: #8fbaff;
 }
 
 
@@ -200,12 +446,21 @@ body{
 
 @media (max-width: 576px) { 
 
-    .header .container .col-sm-6 .header-img-1,.header .container .col-sm-6 .header-img-2{
+    .header .header-img-1,
+    .header .header-img-2{
         display: none;
     }
-
+    .nav-btns{
+        display: none;
+    }
     .play-games-banner .col-sm-6 .img-banner{
         display: none;
+    }
+    .playing-device-banner .col-sm-6:nth-child(1){
+        padding: 1rem 0;
+    }
+    .technologies-used-banner h2{
+        font-size: 2.9rem;
     }
     .technologies-used-banner .col-sm-4{
         margin: 1rem 0;
@@ -213,4 +468,8 @@ body{
     /* .feature-banner .col-3 img{
         height: 3.5rem;
     } */
+    .guide-banner p{
+        text-align: left;
+        font-size: .8rem;
+    }
  }
